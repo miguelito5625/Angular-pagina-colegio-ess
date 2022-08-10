@@ -3,10 +3,10 @@
 
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 
-        <div class="card animate__animated animate__zoomIn">
+        <div class="card animate__animated {{animacionEntrada}}" #opcionProfesor>
             <h2>Profesor</h2>
             
-            <button class="cssbuttons-io-button"> Ingresar
+            <button class="cssbuttons-io-button" (click)="navegarSiguiente('profesor')"> Ingresar
                 <div class="icon">
                   <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
                 </div>
@@ -20,9 +20,10 @@
 
     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 
-        <div class="card animate__animated animate__zoomIn">
+        <div class="card animate__animated animate__zoomIn" #opcionAlumno
+        >
             <h2>Alumno</h2>
-            <button class="cssbuttons-io-button"> Ingresar
+            <button class="cssbuttons-io-button" (click)="navegarSiguiente('alumno')"> Ingresar 
                 <div class="icon">
                   <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
                 </div>
