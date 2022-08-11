@@ -1,5 +1,6 @@
 import { animation } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ENTRANCES_ANIMATIONS } from 'src/app/extra-data/entrances-animatios';
 
 @Component({
   selector: 'app-seleccion-profesor-alumno',
@@ -11,16 +12,8 @@ export class SeleccionProfesorAlumnoComponent implements OnInit, AfterViewInit, 
   @ViewChild('opcionProfesor', {static: false}) opcionProfesor: ElementRef;
   @ViewChild('opcionAlumno', {static: false}) opcionAlumno: ElementRef;
 
-  animacionesEntrada = [
-    "animate__backInDown",
-    "animate__backInLeft",
-    "animate__backInRight",
-    "animate__lightSpeedInRight",
-    "animate__lightSpeedInLeft",
-    "animate__rotateInDownLeft",
-    "animate__rollIn"
-  ]
-  animacionEntrada: String = "";
+  animacionEntrada1: String = "";
+  animacionEntrada2: String = "";
 
   animationendListener;
 
@@ -28,7 +21,8 @@ export class SeleccionProfesorAlumnoComponent implements OnInit, AfterViewInit, 
     private renderer:Renderer2
   ) { 
 
-    this.animacionEntrada = this.obtenerAnimacionEntrada();
+    this.animacionEntrada1 = this.obtenerAnimacionEntrada();
+    this.animacionEntrada2 = this.obtenerAnimacionEntrada();
 
   }
 
@@ -39,7 +33,7 @@ export class SeleccionProfesorAlumnoComponent implements OnInit, AfterViewInit, 
   }
 
   obtenerAnimacionEntrada(): String {
-    return this.animacionesEntrada[Math.floor(Math.random()*this.animacionesEntrada.length)];
+    return ENTRANCES_ANIMATIONS[Math.floor(Math.random()*ENTRANCES_ANIMATIONS.length)];
   }
 
   ngAfterViewInit(): void {
