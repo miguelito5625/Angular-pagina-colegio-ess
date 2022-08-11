@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalindexComponent } from './principalindex/principalindex.component';
+import { SeleccionGradoComponent } from './seleccion-grado/seleccion-grado.component';
 import { SeleccionProfesorAlumnoComponent } from './seleccion-profesor-alumno/seleccion-profesor-alumno.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
     component: PrincipalindexComponent,
     children: [
       { path: 'seleccionprofeoalumno', component: SeleccionProfesorAlumnoComponent },
+      { path: 'selecciongrado', component: SeleccionGradoComponent },
       {
         path: '',
         redirectTo: 'seleccionprofeoalumno',
