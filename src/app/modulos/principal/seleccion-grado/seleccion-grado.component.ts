@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ENTRANCES_ANIMATIONS } from 'src/app/extra-data/entrances-animatios';
 
 @Component({
@@ -25,11 +26,13 @@ export class SeleccionGradoComponent implements OnInit {
   ];
 
   
-  constructor() { 
+  constructor(
+    private router: Router
+  ) { 
 
     for(let i = 0; i < this.grados.length; i++) {
       this.grados[i].animacionEntrada = this.obtenerAnimacionEntrada();
-      console.log(this.grados[i]);
+      // console.log(this.grados[i]);
     }
 
   }
@@ -43,6 +46,7 @@ export class SeleccionGradoComponent implements OnInit {
 
   siguientePagina(grado: object): void {
     console.log(grado);
+    this.router.navigate(['/principal/seleccioncurso']);
   }
 
 }
