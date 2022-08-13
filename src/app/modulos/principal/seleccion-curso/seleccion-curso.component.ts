@@ -28,7 +28,7 @@ export class SeleccionCursoComponent implements OnInit {
   }
 
   siguientePagina(curso: object): void {
-    console.log();
+    console.log(curso);
   }
 
 }
