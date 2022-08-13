@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeleccionCursoComponent implements OnInit {
 
+  cursos: any[] = [
+    {
+      id: 1,
+      nombre: "Tecnología"
+    },
+    {
+      id: 2,
+      nombre: "Lengua"
+    },
+    {
+      id: 3,
+      nombre: "Matematica"
+    },
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  siguientePagina(curso: object): void {
+    console.log();
   }
 
 }
