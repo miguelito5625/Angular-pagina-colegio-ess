@@ -1,1 +1,14 @@
-<p>seleccion-grado works!</p>
+<h2>Seleccione el grado</h2>
+
+<ul class="list-group">
+
+  <li *ngFor="let grado of grados" class="animate__animated {{ grado.animacionEntrada }} list-group-item d-flex justify-content-between align-items-center">
+    {{grado.nombre}}
+    <button (click)="siguientePagina(grado)" type="button" class="btn btn-dark btn-sm">
+      <i class="bi bi-arrow-right-square-fill"></i>
+    </button>
+
+  </li>
+
+
+</ul>
