@@ -7,6 +7,7 @@ import { PrincipalindexComponent } from './principalindex/principalindex.compone
 import { NavbarmodprincipalComponent } from './navbarmodprincipal/navbarmodprincipal.component';
 import { SeleccionGradoComponent } from './seleccion-grado/seleccion-grado.component';
 import { SeleccionCursoComponent } from './seleccion-curso/seleccion-curso.component';
+import { SeleccionBimestreComponent } from './seleccion-bimestre/seleccion-bimestre.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SeleccionCursoComponent } from './seleccion-curso/seleccion-curso.compo
     NavbarmodprincipalComponent,
     SeleccionGradoComponent,
     SeleccionCursoComponent,
+    SeleccionBimestreComponent,
   ],
   imports: [
     CommonModule,

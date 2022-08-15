@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalindexComponent } from './principalindex/principalindex.component';
+import { SeleccionBimestreComponent } from './seleccion-bimestre/seleccion-bimestre.component';
 import { SeleccionCursoComponent } from './seleccion-curso/seleccion-curso.component';
 import { SeleccionGradoComponent } from './seleccion-grado/seleccion-grado.component';
 import { SeleccionProfesorAlumnoComponent } from './seleccion-profesor-alumno/seleccion-profesor-alumno.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: 'seleccionprofeoalumno', component: SeleccionProfesorAlumnoComponent },
       { path: 'selecciongrado', component: SeleccionGradoComponent },
       { path: 'seleccioncurso', component: SeleccionCursoComponent },
+      { path: 'seleccionbimestre', component: SeleccionBimestreComponent },
       {
         path: '',
         redirectTo: 'seleccionprofeoalumno',
