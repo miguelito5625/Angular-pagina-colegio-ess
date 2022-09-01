@@ -1,43 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ENTRANCES_ANIMATIONS } from 'src/app/extra-data/entrances-animatios';
+import { GradosService } from 'src/app/servicios/grados.service';
 
 @Component({
   selector: 'app-seleccion-grado',
   templateUrl: './seleccion-grado.component.html',
   styleUrls: ['./seleccion-grado.component.css']
 })
-export class SeleccionGradoComponent implements OnInit {
+export class SeleccionGradoComponent implements OnInit, OnDestroy {
 
-  grados:any[] = [
-    {
-      id: 1,
-      nombre: "Primero Básico"
-    },
-    {
-      id: 2,
-      nombre: "Segundo Básico"
-    },
-    {
-      id: 1,
-      nombre: "Tercero Básico"
-    },
-    
-  ];
+  subcribcionObtenerGrados;
+
+  grados:any[] = [];
 
   
   constructor(
-    private router: Router
+    private router: Router,
+    private servicioGrados: GradosService
   ) { 
 
-    for(let i = 0; i < this.grados.length; i++) {
-      this.grados[i].animacionEntrada = this.obtenerAnimacionEntrada();
-      // console.log(this.grados[i]);
-    }
+    this.cargarGrados();
 
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.subcribcionObtenerGrados.unsubscribe();
+  }
+
+  cargarGrados(): void {
+    this.subcribcionObtenerGrados = this.servicioGrados.obtenerGrados().subscribe(
+      res => {
+        this.grados = res.grados;
+        for(let i = 0; i < this.grados.length; i++) {
+          this.grados[i].animacionEntrada = this.obtenerAnimacionEntrada();
+        }
+        console.log(this.grados);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   obtenerAnimacionEntrada(): string {
